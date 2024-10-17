@@ -20,7 +20,7 @@ function PopularProducts({ coffees,changeState }) {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-10 max-w-6xl mx-auto mt-6 md:mt-10 pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto mt-6 md:mt-10 pb-10">
         {coffees.map(coffee => (
           <Coffee key={coffee._id} coffee={coffee} changeState={changeState}/>
         ))}

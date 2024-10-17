@@ -35,7 +35,7 @@ function AddCoffee() {
       });
   };
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center mt-10">
       <form
         onSubmit={handleAddCoffee}
         className="max-w-5xl mx-auto bg-[#F4F3F0] px-4 md:px-8 py-4 "
