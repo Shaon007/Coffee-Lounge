@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import cup from '../../assets/images/icons/cup.png'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,9 +10,11 @@ function Navbar() {
       <header className="bg-[#D2B48C] text-black shadow-lg">
         <div className="container mx-auto flex items-center justify-between h-16 px-4">
           {/* Logo */}
-          <a href="" className="flex items-center w-[160px]">
-            <span className="  font-black">COFFEE LOUNGE</span>
-          </a>
+          <div className="flex items-center w-[220px]">
+            <p className="  font-black">COFFEE  <span className="text-stone-200 italic">LOUNGE</span> </p>
+            <img className="w-6 ml-2" src={cup} alt="image" />
+
+          </div>
 
           {/* Hamburger Icon for Mobile */}
           <div className="md:hidden">
@@ -70,7 +73,7 @@ function Navbar() {
           {/* <button className="hidden w-[120px] text-lg md:block rounded-full font-bold  p-2">
             Contact
           </button> */}
-          <Link to="" className="hidden w-[120px] text-lg md:block rounded-full font-bold  p-2">Contact</Link>
+          <Link to="/contact" className="hidden w-[120px] text-lg md:block rounded-full font-bold  p-2">Contact</Link>
         </div>
       </header>
     </div>

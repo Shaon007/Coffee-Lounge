@@ -1,17 +1,17 @@
 
 import PopularProducts from "../../components/PopularProducts"
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 
 function Homepage() {
-  const [refresh,setRefresh]=useState(false)
-  const [coffees,setCoffees]=useState(null)
+  const [refresh, setRefresh] = useState(false)
+  const [coffees, setCoffees] = useState(null)
 
-  const changeState=()=>{
+  const changeState = () => {
     setRefresh(!refresh)
   }
 
   const fetchCoffees = () => {
-    fetch('http://localhost:5000/coffee')
+    fetch('https://coffee-store-server-five-lime.vercel.app/coffee')
       .then(res => res.json())
       .then(data => setCoffees(data))
       .catch(err => console.error('Error fetching coffee data:', err));
@@ -22,8 +22,8 @@ function Homepage() {
   }, [refresh]);
 
   return (
-    coffees!==null &&  <div >
-      <PopularProducts coffees={coffees} changeState={changeState}/>
+    coffees !== null && <div >
+      <PopularProducts coffees={coffees} changeState={changeState} />
     </div>
   )
 }

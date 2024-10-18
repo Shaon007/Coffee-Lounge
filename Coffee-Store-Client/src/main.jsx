@@ -9,16 +9,17 @@ import AddCoffee from './Pages/AddCoffee/AddCoffee';
 import UpdateCoffee from './components/UpdateCoffee';
 import AboutUs from './Pages/AboutUS/AboutUs';
 import BlogPage from './Pages/Blogs/Blogs';
+import ContactSection from './Pages/Contact/Contact';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: <Root/>,
     children: [
       {
         path: '/',
         element: <Homepage />,
-        loader: () => fetch('http://localhost:5000/coffee'),
+        loader: () => fetch('https://coffee-store-server-five-lime.vercel.app/coffee'),
       },
       {
         path: '/addcoffee',
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: '/updatecoffee/:id',
         element: <UpdateCoffee />,
-        loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`),
+        loader: ({ params }) => fetch(`https://coffee-store-server-five-lime.vercel.app/coffee/${params.id}`),
       },
       {
         path: '/AboutUs',
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/blogs',
         element: <BlogPage></BlogPage>
+      },
+      {
+        path: '/contact',
+        element: <ContactSection></ContactSection>
       },
     ],
   },

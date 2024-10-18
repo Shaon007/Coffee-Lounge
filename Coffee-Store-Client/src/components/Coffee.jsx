@@ -3,10 +3,10 @@ import { MdModeEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-function Coffee({ coffee,changeState }) {
+function Coffee({ coffee, changeState }) {
 
 
-  const { _id, photo, name, chef,price } = coffee;
+  const { _id, photo, name, chef, price } = coffee;
   const handleDelete = _id => {
     console.log('clicked', _id);
     Swal.fire({
@@ -19,7 +19,7 @@ function Coffee({ coffee,changeState }) {
       confirmButtonText: 'Yes, delete it!',
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://coffee-store-server-five-lime.vercel.app/coffee/${_id}`, {
           method: 'DELETE',
         })
           .then(res => res.json())
@@ -42,7 +42,7 @@ function Coffee({ coffee,changeState }) {
   return (
     <div className="grid gap-5 grid-cols-6 shadow-md bg-neutral-100 rounded-lg p-3">
       <div className="col-span-2">
-        <img  src={photo} alt="" className='rounded-lg h-full'/>
+        <img src={photo} alt="" className='rounded-lg h-full' />
       </div>
       <div className="col-span-3 flex justify-center items-center flex-col">
         <h2>Name: {name}</h2>

@@ -6,6 +6,7 @@ function Root() {
   return (
     <div>
       <Navbar></Navbar>
+      
       <Outlet/>
     </div>
   )

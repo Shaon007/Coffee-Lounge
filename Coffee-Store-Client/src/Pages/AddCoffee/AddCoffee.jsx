@@ -12,8 +12,8 @@ function AddCoffee() {
     const details = form.details.value;
     const photo = form.photo.value;
     const price = form.price.value;
-    const newCoffee = { name, chef, supplier, taste, category, details, photo,price };
-    fetch('http://localhost:5000/coffee', {
+    const newCoffee = { name, chef, supplier, taste, category, details, photo, price };
+    fetch('https://coffee-store-server-five-lime.vercel.app/coffee', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

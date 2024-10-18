@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 
 function UpdateCoffee() {
   const specificCoffee = useLoaderData();
-  const { _id, name, chef, supplier, taste, category, details, photo ,price} =
+  const { _id, name, chef, supplier, taste, category, details, photo, price } =
     specificCoffee;
   const handleUpdate = e => {
     e.preventDefault();
@@ -26,7 +26,7 @@ function UpdateCoffee() {
       photo,
       price
     };
-    fetch(`http://localhost:5000/coffee/${_id}`, {
+    fetch(`https://coffee-store-server-five-lime.vercel.app/coffee/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -36,7 +36,7 @@ function UpdateCoffee() {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if (data.modifiedCount>0) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: 'Success!',
             text: 'Updated Coffee Information',
